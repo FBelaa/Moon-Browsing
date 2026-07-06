@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Moon Browsing",
+  "description": "Check URLs and downloads with VirusTotal, save page HTML, boost browsing, and export/import local settings.",
+  "version": "0.1",
+  "action": {
+    "default_title": "Moon Browsing",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "downloads",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://www.virustotal.com/*",
+    "https://www.virustotal.com/api/v3/*",
+    "https://www.speedtest.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
