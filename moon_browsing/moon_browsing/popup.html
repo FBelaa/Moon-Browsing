@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moon Browsing</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <img src="icons/icon128.png" alt="Moon Browsing Icon" class="logo" />
+      <div>
+        <h1>Moon Browsing</h1>
+        <p class="sub" data-i18n="subtitle">Safer & lighter browsing</p>
+      </div>
+    </header>
+
+    <section class="nav-panel" aria-label="Browser controls">
+      <button id="goBack" title="Back">←</button>
+      <button id="goForward" title="Forward">→</button>
+      <button id="reloadPage" title="Reload">↻</button>
+      <button id="openSpeedtest" title="Speedtest">⚡</button>
+    </section>
+
+    <section class="card api-card">
+      <label for="apiKey" data-i18n="apiKeyLabel">VirusTotal API Key</label>
+      <div class="api-row">
+        <input id="apiKey" type="password" placeholder="Paste x-apikey" autocomplete="off" />
+        <button id="saveApiKey" class="small" data-i18n="save">Save</button>
+      </div>
+      <p class="hint" data-i18n="apiHint">Der Key bleibt lokal in Chrome Storage.</p>
+    </section>
+
+    <section class="card">
+      <button id="checkUrl" class="primary" data-i18n="checkUrl">Check URL</button>
+      <div id="urlResult" class="result muted" data-i18n="notChecked">Noch nicht geprüft</div>
+    </section>
+
+    <section class="card">
+      <button id="checkDownload" class="primary" data-i18n="checkDownload">Check Download</button>
+      <div id="lastDownload" class="hint" data-i18n="lookingDownload">Letzter Download wird gesucht…</div>
+      <input id="filePicker" type="file" />
+      <label class="toggle-row">
+        <input id="allowUpload" type="checkbox" />
+        <span data-i18n="allowUpload">Datei zu VirusTotal hochladen, falls kein Hash-Report existiert</span>
+      </label>
+      <div id="downloadResult" class="result muted" data-i18n="pickFile">Wähle die heruntergeladene Datei aus.</div>
+    </section>
+
+    <section class="card compact-actions">
+      <button id="downloadHtml" data-i18n="downloadHtml">Download HTML</button>
+      <div class="fps-row">
+        <button id="enhanceFps" data-i18n="enhanceOn">Enhance FPS einschalten</button>
+        <span id="fpsBadge" class="status off">OFF</span>
+      </div>
+      <div id="fpsResult" class="result muted" data-i18n="fpsOff">Enhance FPS ist aus</div>
+    </section>
+
+    <section class="card settings-card">
+      <div class="settings-title" data-i18n="settingsBackup">Settings Backup</div>
+      <div class="settings-buttons">
+        <button id="exportSettings" data-i18n="exportSettings">Export</button>
+        <button id="importSettings" data-i18n="importSettings">Import</button>
+      </div>
+      <input id="importFile" type="file" accept=".config,application/json,text/plain" hidden />
+      <div id="settingsResult" class="result muted" data-i18n="settingsHint">Exportiert/importiert deine lokalen Einstellungen als .config Datei.</div>
+    </section>
+
+    <footer class="footer">
+      <span>v<span id="version">0.0.2</span></span>
+      <div class="footer-actions">
+        <button class="flag" data-lang="de" title="Deutsch">🇩🇪</button>
+        <button class="flag" data-lang="en" title="English">🇺🇸</button>
+        <button class="flag" data-lang="ru" title="Русский">🇷🇺</button>
+        <a id="githubLink" href="https://github.com/FBelaa/Moon-Browsing" target="_blank" title="Open GitHub">🌙</a>
+      </div>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
